@@ -3,14 +3,14 @@ import Board from './board';
 
 class Game extends Component {
 
-  handleClick() {
-    console.log(444);
+  handleClick(i) {
+    console.log(i);
   }
 
   render() {
     return (
       <div>
-        <Board onClick={() => this.handleClick()}/>
+        <Board onClick={(i) => this.handleClick(i)}/>
       </div>
     );
   }

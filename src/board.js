@@ -30,8 +30,7 @@ class Board extends Component {
       <Square
         winnerClass={winnerClass}
         key={i}
-
-        onClick={() => this.props.onClick()}
+        onClick={(i) => this.props.onClick(i)}
       />
     );
   }
