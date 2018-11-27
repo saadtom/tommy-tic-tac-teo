@@ -45,6 +45,7 @@ class Game extends React.Component {
 
 
     squares[i] = this.state.xIsNext ? 'X' : 'O';
+    //This part is respoansilbe for drawing the step inside eac square
     this.setState({
       history: history.concat([
         {
