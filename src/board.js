@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Square from './square';
 
-class Board extends Component {
+class Board extends React.Component {
   createBoard(row, col) {
     const board = [];
     let cellCounter = 0;
@@ -30,7 +30,8 @@ class Board extends Component {
       <Square
         winnerClass={winnerClass}
         key={i}
-        onClick={(i) => this.props.onClick(i)}
+        value={this.props.squares[i]}
+        onClick={() => this.props.onClick(i)}
       />
     );
   }
