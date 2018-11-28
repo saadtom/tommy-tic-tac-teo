@@ -44,7 +44,7 @@ class Game extends React.Component {
     const squares = current.squares.slice();
 
 
-    squares[i] = this.state.xIsNext ? 'X' : 'O';
+    squares[i] = this.state.xIsNext ? 'red-Square' : 'blue-Square';
 
     this.setState({
       history: history.concat([
@@ -77,7 +77,7 @@ class Game extends React.Component {
     } else if (history.length === 10) {
       status = 'Draw. No one won.';
     } else {
-      status = `Next player: ${this.state.xIsNext ? 'X' : 'O'}`;
+      status = `Next player: ${this.state.xIsNext ? 'red-Square' : 'blue-Square'}`;
     }
 
     return (

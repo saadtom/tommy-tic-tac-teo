@@ -8,6 +8,14 @@ ul {
   padding-left: 30px;
 }
 
+.blue-Square {
+  background-color:blue !important;
+}
+
+.red-Square {
+  background-color:red !important;
+}
+
 .board-row:after {
   clear: both;
   content: '';
