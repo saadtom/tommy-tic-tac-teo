@@ -42,21 +42,24 @@ class Game extends React.Component {
     const history = this.state.history.slice(0, this.state.currentStepNumber + 1);
     const current = history[history.length - 1];
     const squares = current.squares.slice();
+    const winnerObj = calculateWinner(current.squares);
 
+    if (winnerObj.winner === null) {
+      squares[i] = this.state.xIsNext ? 'red-Square' : 'blue-Square';
 
-    squares[i] = this.state.xIsNext ? 'red-Square' : 'blue-Square';
+      this.setState({
+        history: history.concat([
+          {
+            squares,
+            stepNumber: history.length,
+          },
+        ]),
+        //This part is respoansilbe for drawing the step inside eac square
+        xIsNext: !this.state.xIsNext,
+        currentStepNumber: history.length,
+      });
+    }
 
-    this.setState({
-      history: history.concat([
-        {
-          squares,
-          stepNumber: history.length,
-        },
-      ]),
-      //This part is respoansilbe for drawing the step inside eac square
-      xIsNext: !this.state.xIsNext,
-      currentStepNumber: history.length,
-    });
   }
 
   jumpTo(step) {
