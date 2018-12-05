@@ -55,11 +55,11 @@ ul {
 
 .game {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 }
 
 .game-info {
-  margin-left: 20px;
+  margin-top: 20px;
 }
 
 .button {
@@ -77,4 +77,22 @@ ul {
   background-color: #4caf50;
   color: #000;
   font-weight: bold;
+}
+
+.newGameContainer {
+  width:120px;
+  margin-top:10px;
+}
+.newGameContainer button {
+  font-size:14px;
+  text-transform:uppercase;
+  padding:10px;
+  background-color: #33FF7A;
+  color:#000;
+  border:none;
+}
+
+.newGameContainer button:focus {
+    outline: none;
+    border: none;
 }

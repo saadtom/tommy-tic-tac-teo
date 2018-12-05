@@ -69,6 +69,21 @@ class Game extends React.Component {
     });
   }
 
+  startNewGame() {
+    let newHis = {
+      history: [
+        {
+          squares: Array(9).fill(null),
+        },
+      ],
+      currentStepNumber: 0,
+      xIsNext: true,
+    }
+
+    this.setState(newHis);
+
+  }
+
   render() {
     const { history } = this.state;
     const current = history[this.state.currentStepNumber];
@@ -94,6 +109,9 @@ class Game extends React.Component {
         </div>
         <div className="game-info">
           <div>{status}</div>
+        </div>
+        <div className="newGameContainer">
+         <button onClick={() => this.startNewGame()}>New Game</button>
         </div>
       </div>
     );
