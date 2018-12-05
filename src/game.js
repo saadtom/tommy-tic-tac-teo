@@ -44,7 +44,8 @@ class Game extends React.Component {
     const squares = current.squares.slice();
     const winnerObj = calculateWinner(current.squares);
 
-    if (winnerObj.winner === null) {
+    if (winnerObj.winner === null && squares[i] === null) {
+
       squares[i] = this.state.xIsNext ? 'red-Square' : 'blue-Square';
 
       this.setState({
